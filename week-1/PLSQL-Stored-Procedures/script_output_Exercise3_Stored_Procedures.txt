@@ -1,0 +1,137 @@
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.009
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.006
+
+
+Table ACCOUNTS created.
+
+Elapsed: 00:00:00.027
+
+
+Table EMPLOYEES created.
+
+Elapsed: 00:00:00.016
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.017
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.002
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.002
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.015
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.002
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.002
+
+
+Commit complete.
+
+Elapsed: 00:00:00.003
+EMPLOYEEID EMPLOYEENAME DEPARTMENT SALARY 
+---------- ------------ ---------- ------ 
+1          Rohit        IT         50000  
+2          Anjali       HR         45000  
+3          Karan        IT         60000  
+4          Sneha        Finance    55000  
+
+Elapsed: 00:00:00.011
+4 rows selected. 
+
+
+
+Procedure PROCESSMONTHLYINTEREST compiled
+
+Elapsed: 00:00:00.023
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.009
+ACCOUNTID CUSTOMERNAME ACCOUNTTYPE BALANCE 
+--------- ------------ ----------- ------- 
+101       Rahul        Savings     10100   
+102       Aman         Savings     15150   
+103       Priya        Current     12000   
+104       Riya         Savings     8080    
+
+Elapsed: 00:00:00.002
+4 rows selected. 
+
+
+
+Procedure UPDATEEMPLOYEEBONUS compiled
+
+Elapsed: 00:00:00.014
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.011
+EMPLOYEEID EMPLOYEENAME DEPARTMENT SALARY 
+---------- ------------ ---------- ------ 
+1          Rohit        IT         55000  
+2          Anjali       HR         45000  
+3          Karan        IT         66000  
+4          Sneha        Finance    55000  
+
+Elapsed: 00:00:00.001
+4 rows selected. 
+
+
+
+Procedure TRANSFERFUNDS compiled
+
+Elapsed: 00:00:00.012
+
+Transfer Successful
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.013
+ACCOUNTID CUSTOMERNAME ACCOUNTTYPE BALANCE 
+--------- ------------ ----------- ------- 
+101       Rahul        Savings     8100    
+102       Aman         Savings     15150   
+103       Priya        Current     12000   
+104       Riya         Savings     10080   
+
+Elapsed: 00:00:00.001
+4 rows selected. 
+
