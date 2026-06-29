@@ -1,0 +1,124 @@
+
+
+Table CUSTOMERS created.
+
+Elapsed: 00:00:00.033
+
+
+Table LOANS created.
+
+Elapsed: 00:00:00.021
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.021
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.018
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+1 row inserted.
+
+Elapsed: 00:00:00.003
+
+
+Commit complete.
+
+Elapsed: 00:00:00.003
+LOANID CUSTOMERID INTERESTRATE DUEDATE                   
+------ ---------- ------------ ------------------------- 
+101    1          10           07/20/2026, 05:30:00 AM   
+102    2          12           08/30/2026, 05:30:00 AM   
+103    3          9            07/15/2026, 05:30:00 AM   
+104    4          11           07/25/2026, 05:30:00 AM   
+
+Elapsed: 00:00:00.014
+4 rows selected. 
+
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.018
+LOANID CUSTOMERID INTERESTRATE DUEDATE                   
+------ ---------- ------------ ------------------------- 
+101    1          9            07/20/2026, 05:30:00 AM   
+102    2          12           08/30/2026, 05:30:00 AM   
+103    3          8            07/15/2026, 05:30:00 AM   
+104    4          11           07/25/2026, 05:30:00 AM   
+
+Elapsed: 00:00:00.001
+4 rows selected. 
+
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.012
+CUSTOMERID CUSTOMERNAME AGE BALANCE ISVIP   
+---------- ------------ --- ------- ------- 
+1          Rahul        65  12000   TRUE    
+2          Aman         45  8000    FALSE   
+3          Priya        70  15000   TRUE    
+4          Riya         55  5000    FALSE   
+
+Elapsed: 00:00:00.001
+4 rows selected. 
+
+
+Reminder: Loan payment for Rahul is due on 20-JUL-2026
+Reminder: Loan payment for Priya is due on 15-JUL-2026
+Reminder: Loan payment for Riya is due on 25-JUL-2026
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.017
+CUSTOMERID CUSTOMERNAME AGE BALANCE ISVIP   
+---------- ------------ --- ------- ------- 
+1          Rahul        65  12000   TRUE    
+2          Aman         45  8000    FALSE   
+3          Priya        70  15000   TRUE    
+4          Riya         55  5000    FALSE   
+
+Elapsed: 00:00:00.002
+4 rows selected. 
+
+LOANID CUSTOMERID INTERESTRATE DUEDATE                   
+------ ---------- ------------ ------------------------- 
+101    1          9            07/20/2026, 05:30:00 AM   
+102    2          12           08/30/2026, 05:30:00 AM   
+103    3          8            07/15/2026, 05:30:00 AM   
+104    4          11           07/25/2026, 05:30:00 AM   
+
+Elapsed: 00:00:00.001
+4 rows selected. 
+
