@@ -1,0 +1,15 @@
+.form-wrapper { max-width: 640px; margin: 0 auto; }
+.success-banner { background: var(--success-light); border: 1px solid rgba(16,185,129,0.3); color: #34d399; padding: 0.85rem 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; font-weight: 500; }
+.input-with-status { position: relative; }
+.validating-badge { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--warning); }
+.form-array { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; }
+.form-array-item { display: flex; gap: 0.5rem; align-items: flex-start; flex-wrap: wrap; }
+.form-array-item .form-input { flex: 1; }
+.btn-sm { padding: 0.5rem 0.75rem; font-size: 0.8rem; white-space: nowrap; }
+.form-debug { padding: 1rem; font-size: 0.85rem; margin: 1rem 0; background: rgba(0,0,0,0.2); }
+.form-debug strong.valid { color: #10b981; }
+.form-debug strong.invalid { color: #ef4444; }
+.form-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.page-header { padding: 2rem 0 1.5rem; }
+.page-header h1 { font-size: 2rem; font-weight: 700; background: linear-gradient(to right, #6366f1, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.page-subtitle { color: var(--text-muted); margin-top: 0.5rem; }

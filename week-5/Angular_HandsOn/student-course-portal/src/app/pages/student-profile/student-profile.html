@@ -1,0 +1,58 @@
+<!-- StudentProfile Template (Hands-On 2, 6) -->
+<div class="container">
+  <div class="page-header">
+    <h1>My Profile</h1>
+    <p class="page-subtitle">Your academic information and enrolled courses.</p>
+  </div>
+
+  <div class="profile-layout">
+    <!-- Profile Card -->
+    <div class="glass-card profile-card">
+      <div class="avatar">{{ studentName[0] }}</div>
+      <h2>{{ studentName }}</h2>
+      <p class="student-id">ID: {{ studentId }}</p>
+      <div class="profile-details">
+        <div class="detail-row">
+          <span class="detail-label">Email</span>
+          <span>{{ email }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Department</span>
+          <span>{{ department }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Year</span>
+          <span>Year {{ year }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">GPA</span>
+          <span class="gpa-badge">{{ gpa }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enrolled Courses -->
+    <div class="enrolled-section">
+      <h2 class="section-title">Enrolled Courses</h2>
+      <div *ngIf="isLoading" class="loading-text">Loading courses...</div>
+      <div *ngIf="!isLoading && enrolledCourses.length === 0" class="empty-state glass-card">
+        <p>You are not enrolled in any courses yet.</p>
+      </div>
+      <div class="enrolled-list" *ngIf="!isLoading && enrolledCourses.length > 0">
+        <div class="glass-card enrolled-item" *ngFor="let course of enrolledCourses">
+          <div class="enrolled-info">
+            <span class="enrolled-code">{{ course.code }}</span>
+            <h3 class="enrolled-name">{{ course.name }}</h3>
+            <p class="enrolled-meta">{{ course.department }} • {{ course.credits }} Credits</p>
+          </div>
+          <span class="badge"
+            [class.badge-passed]="course.gradeStatus === 'Passed'"
+            [class.badge-failed]="course.gradeStatus === 'Failed'"
+            [class.badge-pending]="course.gradeStatus === 'Pending'">
+            {{ course.gradeStatus }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

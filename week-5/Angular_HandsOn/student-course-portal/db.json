@@ -1,0 +1,17 @@
+{
+  "courses": [
+    { "id": 1, "name": "Data Structures & Algorithms", "code": "CS201", "credits": 4, "department": "Computer Science", "gradeStatus": "Passed", "description": "Core algorithms and data structures including trees, graphs, sorting and searching." },
+    { "id": 2, "name": "Database Management Systems", "code": "CS301", "credits": 3, "department": "Computer Science", "gradeStatus": "Passed", "description": "Relational databases, SQL, normalization and transaction management." },
+    { "id": 3, "name": "Web Development", "code": "CS401", "credits": 4, "department": "Computer Science", "gradeStatus": "Pending", "description": "HTML, CSS, JavaScript, TypeScript and Angular framework fundamentals." },
+    { "id": 4, "name": "Machine Learning", "code": "AI501", "credits": 3, "department": "AI & Data Science", "gradeStatus": "Pending", "description": "Supervised and unsupervised learning, neural networks and model evaluation." },
+    { "id": 5, "name": "Operating Systems", "code": "CS302", "credits": 4, "department": "Computer Science", "gradeStatus": "Failed", "description": "Process management, memory management, file systems and I/O." },
+    { "id": 6, "name": "Computer Networks", "code": "CS303", "credits": 3, "department": "Computer Science", "gradeStatus": "Pending", "description": "OSI model, TCP/IP protocols, routing and network security basics." }
+  ],
+  "students": [
+    { "id": 1, "name": "Tushar Chaudhary", "email": "tushar@example.com", "department": "Computer Science", "year": 3, "gpa": 3.8 }
+  ],
+  "enrollments": [
+    { "id": 1, "studentId": 1, "courseId": 1, "enrolledAt": "2024-01-10" },
+    { "id": 2, "studentId": 1, "courseId": 3, "enrolledAt": "2024-01-15" }
+  ]
+}

@@ -1,0 +1,36 @@
+<!-- CourseList Template (Hands-On 2, 3, 6) -->
+<div class="container">
+  <div class="page-header">
+    <h1>Available Courses</h1>
+    <p class="page-subtitle">Browse and enroll in courses offered this semester.</p>
+  </div>
+
+  <!-- Notification Banner -->
+  <div class="notification-banner" *ngIf="notification">{{ notification }}</div>
+
+  <!-- Loading State (ngIf) -->
+  <div class="grid-3" *ngIf="isLoading">
+    <div class="glass-card skeleton-card" *ngFor="let i of [1,2,3,4,5,6]">
+      <div class="sk-line short"></div>
+      <div class="sk-line"></div>
+      <div class="sk-line medium"></div>
+      <div class="sk-btn"></div>
+    </div>
+  </div>
+
+  <!-- Courses Grid: ngFor with trackBy -->
+  <div class="grid-3" *ngIf="!isLoading && courses.length > 0">
+    <app-course-card
+      *ngFor="let course of courses; trackBy: trackByCourseId"
+      [course]="course"
+      (enrollRequested)="onEnrollRequested($event)">
+    </app-course-card>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state glass-card" *ngIf="!isLoading && courses.length === 0">
+    <span class="empty-icon">📭</span>
+    <h3>No Courses Found</h3>
+    <p>No courses are available at the moment.</p>
+  </div>
+</div>
