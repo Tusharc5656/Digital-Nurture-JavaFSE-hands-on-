@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  color: darkblue;
+}
+
+h2 {
+  color: darkgreen;
+}
+
+ul {
+  margin-bottom: 20px;
+}
+
+li {
+  margin: 5px 0;
+}
