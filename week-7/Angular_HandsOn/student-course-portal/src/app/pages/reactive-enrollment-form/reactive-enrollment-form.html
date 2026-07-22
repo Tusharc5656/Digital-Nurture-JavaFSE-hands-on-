@@ -1,0 +1,125 @@
+<!-- Reactive Enrollment Form Template (Hands-On 5) -->
+<div class="container">
+  <div class="form-card">
+    <h2>Student Enrollment (Reactive Form)</h2>
+
+    <div *ngIf="submitted && enrollForm.valid" class="success-message">
+      Reactive Enrollment request submitted successfully!
+    </div>
+
+    <form [formGroup]="enrollForm" (ngSubmit)="onSubmit()">
+      <!-- Student Name -->
+      <div class="form-group">
+        <label for="studentName">Student Name *</label>
+        <input
+          id="studentName"
+          type="text"
+          class="form-control"
+          formControlName="studentName" />
+        <div
+          *ngIf="enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['required']"
+          class="error-text">
+          Name is required
+        </div>
+        <div
+          *ngIf="enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['minlength']"
+          class="error-text">
+          Name must be at least 3 characters
+        </div>
+      </div>
+
+      <!-- Student Email with Async Validator -->
+      <div class="form-group">
+        <label for="studentEmail">Student Email *</label>
+        <input
+          id="studentEmail"
+          type="email"
+          class="form-control"
+          formControlName="studentEmail" />
+        <div *ngIf="enrollForm.get('studentEmail')?.pending" class="info-text">
+          Checking email availability...
+        </div>
+        <div
+          *ngIf="enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['required']"
+          class="error-text">
+          Email is required
+        </div>
+        <div
+          *ngIf="enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['email']"
+          class="error-text">
+          Please enter a valid email address
+        </div>
+        <div
+          *ngIf="enrollForm.get('studentEmail')?.errors?.['emailTaken']"
+          class="error-text">
+          Email taken
+        </div>
+      </div>
+
+      <!-- Course ID with Custom Sync Validator -->
+      <div class="form-group">
+        <label for="courseId">Course ID / Code *</label>
+        <input
+          id="courseId"
+          type="text"
+          class="form-control"
+          formControlName="courseId" />
+        <div
+          *ngIf="enrollForm.get('courseId')?.touched && enrollForm.get('courseId')?.errors?.['required']"
+          class="error-text">
+          Course code is required
+        </div>
+        <div
+          *ngIf="enrollForm.get('courseId')?.errors?.['noCourseCode']"
+          class="error-text">
+          Course code starting with XX is not allowed.
+        </div>
+      </div>
+
+      <!-- Preferred Semester -->
+      <div class="form-group">
+        <label for="preferredSemester">Preferred Semester</label>
+        <select id="preferredSemester" class="form-control" formControlName="preferredSemester">
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+      </div>
+
+      <!-- Agree to Terms (requiredTrue) -->
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" formControlName="agreeToTerms" />
+          I agree to the reactive form enrollment terms *
+        </label>
+        <div
+          *ngIf="enrollForm.get('agreeToTerms')?.touched && enrollForm.get('agreeToTerms')?.errors?.['required']"
+          class="error-text">
+          You must agree to terms
+        </div>
+      </div>
+
+      <!-- Dynamic FormArray for Additional Courses (Hands-On 5 Step 56) -->
+      <div class="form-group additional-courses-section">
+        <h3>Additional Courses (FormArray)</h3>
+        <button type="button" class="btn btn-secondary btn-sm" (click)="addCourse()">
+          + Add Another Course
+        </button>
+
+        <div
+          *ngFor="let ctrl of additionalCourses.controls; let i = index"
+          class="dynamic-course-row">
+          <input class="form-control" [formControl]="$any(ctrl)" placeholder="Enter additional course code" />
+          <button type="button" class="btn btn-danger btn-sm" (click)="removeCourse(i)">
+            Remove
+          </button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary" [disabled]="enrollForm.invalid">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

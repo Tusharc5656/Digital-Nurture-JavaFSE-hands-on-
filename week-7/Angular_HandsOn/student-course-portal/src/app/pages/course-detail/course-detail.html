@@ -1,0 +1,37 @@
+<div class="container">
+  <a routerLink="/courses" class="btn btn-secondary">← Back to Courses</a>
+
+  <div *ngIf="isLoading" class="loading-state">
+    <p>Loading course details...</p>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert-error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="course && !isLoading" class="detail-card">
+    <div class="card-header">
+      <h2>{{ course.name }}</h2>
+      <span class="badge" [ngClass]="'badge-' + (course.gradeStatus || 'pending').toLowerCase()">
+        {{ course.gradeStatus }}
+      </span>
+    </div>
+
+    <p><strong>Course Code:</strong> {{ course.code }}</p>
+    <p><strong>Department:</strong> {{ course.department || 'N/A' }}</p>
+    <p><strong>Credits:</strong> {{ course.credits | creditLabel }}</p>
+    <p><strong>Description:</strong> {{ course.description || 'No detailed description available.' }}</p>
+
+    <div class="students-section">
+      <h3>Enrolled Students (switchMap HTTP Chain Demo)</h3>
+      <div *ngIf="enrolledStudents.length; else noStudents">
+        <div *ngFor="let student of enrolledStudents" class="student-item">
+          <strong>{{ student.name }}</strong> ({{ student.email }}) - Year {{ student.year }}
+        </div>
+      </div>
+      <ng-template #noStudents>
+        <p>No student enrollment records found for this course.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<!-- CourseCard Template: ngClass, ngStyle, *ngSwitch, Pipe, Directive -->
+<div
+  class="glass-card course-card"
+  [ngClass]="cardClasses"
+  [ngStyle]="{ 'border-left': '4px solid ' + getBorderColor() }"
+  appHighlight="lightyellow">
+
+  <div class="card-header">
+    <span class="course-code">{{ course.code }}</span>
+
+    <!-- *ngSwitch for Grade Status Badge -->
+    <div [ngSwitch]="(course.gradeStatus || '').toLowerCase()">
+      <span *ngSwitchCase="'passed'" class="badge badge-passed">Passed</span>
+      <span *ngSwitchCase="'failed'" class="badge badge-failed">Failed</span>
+      <span *ngSwitchDefault class="badge badge-pending">Pending</span>
+    </div>
+  </div>
+
+  <h3 class="course-name">{{ course.name }}</h3>
+  <p class="course-dept" *ngIf="course.department">{{ course.department }}</p>
+
+  <!-- Custom CreditLabel Pipe -->
+  <p class="course-credits">
+    Credits: {{ course.credits | creditLabel }}
+  </p>
+
+  <!-- Details toggle section -->
+  <div class="card-details" *ngIf="isExpanded">
+    <p class="course-desc">{{ course.description || 'No description available for this course.' }}</p>
+    <p class="course-id-label">Course ID: {{ course.id }}</p>
+  </div>
+
+  <div class="card-actions">
+    <button class="btn btn-secondary btn-sm" (click)="toggleDetails()">
+      {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+
+    <button
+      class="btn btn-primary enroll-btn"
+      (click)="onEnrollClick()">
+      {{ isEnrolled ? 'Unenroll' : 'Enroll' }}
+    </button>
+  </div>
+</div>

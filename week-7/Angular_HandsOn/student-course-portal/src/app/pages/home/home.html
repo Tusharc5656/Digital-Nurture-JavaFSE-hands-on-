@@ -1,0 +1,61 @@
+<!-- Home Template (Hands-On 1 & 2): Demonstrates string interpolation, property, event & two-way binding -->
+<div class="container">
+  <app-notification></app-notification>
+
+  <section class="hero">
+    <!-- String Interpolation: {{ portalName }} -->
+    <h1>{{ portalName }}</h1>
+    <p class="hero-subtitle">Track your courses, manage enrollments, and monitor your academic progress.</p>
+  </section>
+
+  <!-- Two-way Binding: [(ngModel)] — DOM <-> Component -->
+  <div class="search-bar">
+    <input
+      class="form-input"
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search courses..." />
+    <p class="search-hint" *ngIf="searchTerm">Searching for: {{ searchTerm }}</p>
+  </div>
+
+  <!-- Dashboard Stats Cards -->
+  <div class="stats-grid" *ngIf="isLoaded">
+    <div class="glass-card stat-card">
+      <span class="stat-icon">📚</span>
+      <div class="stat-info">
+        <h3>{{ coursesAvailable }}</h3>
+        <p>Courses Available: {{ coursesAvailable }}</p>
+      </div>
+    </div>
+    <div class="glass-card stat-card">
+      <span class="stat-icon">✅</span>
+      <div class="stat-info">
+        <h3>{{ enrolledCount }}</h3>
+        <p>Enrolled: {{ enrolledCount }}</p>
+      </div>
+    </div>
+    <div class="glass-card stat-card">
+      <span class="stat-icon">🏆</span>
+      <div class="stat-info">
+        <h3>{{ gpa }}</h3>
+        <p>GPA: {{ gpa }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property & Event Binding Demo -->
+  <div class="actions">
+    <button class="btn btn-primary" [disabled]="!isPortalActive" (click)="onEnrollClick()">
+      Enroll Now
+    </button>
+    <button class="btn btn-secondary" (click)="onRefresh()" [disabled]="!isLoaded">
+      🔄 Refresh Dashboard
+    </button>
+    <a class="btn btn-secondary" routerLink="/courses">Browse Courses →</a>
+  </div>
+
+  <div *ngIf="message" class="alert-success" style="margin-top: 1rem; color: #10b981; font-weight: bold;">
+    {{ message }}
+  </div>
+</div>
+
